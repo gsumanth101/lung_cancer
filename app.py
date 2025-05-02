@@ -15,7 +15,7 @@ app.secret_key = 'your_secret_key'
 os.makedirs(app.config['UPLOAD_FOLDER'], exist_ok=True)
 
 # Database connection string
-DATABASE_URL = "#"
+DATABASE_URL = "https://github.com/gsumanth101/lung_cancerc"
 
 # Database connection
 def get_db_connection():
