@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-50 to-blue-100 flex flex-col min-h-screen">
+    <!-- Navbar -->
+    <nav class="bg-blue-600 text-white py-4 shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-4">
+            <h1 class="text-xl font-bold">Lung Cancer Detection</h1>
+            <a href="/" class="text-sm font-medium hover:underline">Home</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="flex-grow flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md transition-transform transform hover:scale-105">
+            <div class="flex flex-col items-center">
+                <img src="https://img.icons8.com/external-flat-juicy-fish/64/000000/external-upload-cloud-computing-flat-flat-juicy-fish.png" alt="Upload Icon" class="mb-4">
+                <h1 class="text-3xl font-bold mb-6 text-center text-blue-600">Image Prediction</h1>
+            </div>
+            <form action="{{ url_for('predict') }}" method="post" enctype="multipart/form-data" class="space-y-6">
+                <label class="block">
+                    <span class="text-gray-700 font-medium">Upload an Image</span>
+                    <input type="file" name="image" accept="image/*" class="mt-2 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-100 file:text-blue-700 hover:file:bg-blue-200">
+                </label>
+                <button type="submit" class="w-full bg-blue-500 text-white py-3 px-4 rounded-lg font-semibold hover:bg-blue-600 transition-colors">
+                    <span class="flex items-center justify-center">
+                        <img src="https://img.icons8.com/ios-filled/20/ffffff/upload.png" alt="Upload Icon" class="mr-2">
+                        Upload and Predict
+                    </span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-600 text-white py-4">
+        <div class="container mx-auto text-center text-sm">
+            &copy; 2025 Lung Cancer Detection.
+        </div>
+    </footer>
+</body>
+</html>
